@@ -21,7 +21,9 @@ export const EventsContextProvider = ({ children }) => {
   };
 
   return (
-    <EventsContext.Provider value={{ events, setEventsWithLocalStorage }}>
+    <EventsContext.Provider
+      value={{ events, setEvents, setEventsWithLocalStorage }}
+    >
       {children}
     </EventsContext.Provider>
   );

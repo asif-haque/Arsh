@@ -3,8 +3,8 @@ import { FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="min-h-[100vh] px-5 py-20">
-      <div className="">
+    <div className="min-h-[90vh] px-5 py-20 md:flex items-center justify-center">
+      <div className="md:flex flex-col items-center">
         <h1 className="text-4xl font-bold">
           One Stop Solution To Your{" "}
           <span className="text-orange-600">Event Management</span>

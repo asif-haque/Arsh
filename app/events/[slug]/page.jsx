@@ -21,10 +21,10 @@ const Page = ({ params }) => {
   if (!isMounted) return <Loading />;
 
   return (
-    <div className="p-7">
+    <div className="p-7 lg:px-[25vw] min-h-[90vh]">
       <div className="flex mb-5 items-center gap-2 text-neutral-400">
         <FaChevronLeft
-          className="text-orange-600 text-xs"
+          className="text-orange-600 text-xs lg:text-base hover:cursor-pointer"
           onClick={() => router.back()}
         />
         <Link href={"/events"}>All Events</Link>
@@ -32,7 +32,7 @@ const Page = ({ params }) => {
         <span className="underline underline-offset-2">{tappedEvent.eventName}</span>
       </div>
 
-      <div className="font-semibold text-2xl mb-5">{tappedEvent.eventName}</div>
+      <div className="font-semibold text-2xl mb-3">{tappedEvent.eventName}</div>
       <div className="mb-7">
         <span className="font-medium">Deadline: </span>
         {tappedEvent.eventDate}
