@@ -29,7 +29,9 @@ const Page = ({ params }) => {
         />
         <Link href={"/events"}>All Events</Link>
         <span>/</span>
-        <span className="underline underline-offset-2">{tappedEvent.eventName}</span>
+        <span className="underline underline-offset-2">
+          {tappedEvent.eventName}
+        </span>
       </div>
 
       <div className="font-semibold text-2xl mb-3">{tappedEvent.eventName}</div>

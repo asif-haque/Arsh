@@ -8,6 +8,7 @@ import { debounce } from "@/utils/utils";
 import FilterBox from "../components/filter-box/FilterBox";
 import { IoClose } from "react-icons/io5";
 import { FaFilter } from "react-icons/fa";
+import CreateButton from "../components/create-button/CreateButton";
 
 const Page = () => {
   const { events, setEvents } = useEventsContext();
@@ -93,7 +94,7 @@ const Page = () => {
 
           <div
             className={` bg-white rounded-xl ${
-              isFilterOpen ? `h-[220px] border` : `h-0`
+              isFilterOpen ? `h-[220px] shadow-md` : `h-0`
             } transition-all duration-300`}
           >
             <FilterBox
@@ -122,6 +123,7 @@ const Page = () => {
           )}
         </div>
       </div>
+      <CreateButton />
     </div>
   );
 };

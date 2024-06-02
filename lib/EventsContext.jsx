@@ -1,4 +1,5 @@
 "use client";
+import { initialTemporaryState } from "@/data/data";
 import { createContext, useContext, useState } from "react";
 
 const EventsContext = createContext();
@@ -7,6 +8,7 @@ export const EventsContextProvider = ({ children }) => {
   let initialState;
   try {
     // whenever refreshed
+    localStorage.setItem("events", JSON.stringify(initialTemporaryState));
     initialState = localStorage.getItem("events")
       ? JSON.parse(localStorage.getItem("events"))
       : [];

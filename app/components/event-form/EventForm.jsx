@@ -55,7 +55,7 @@ const EventForm = ({ handleSubmit }) => {
         </div>
         <button
           type="submit"
-          className="bg-orange-600 px-6 py-3 text-white rounded-full mt-2 md:mt-5"
+          className="bg-orange-600 px-6 py-3 text-white rounded-full mt-2 md:mt-5 hover:scale-[97%] hover:bg-opacity-95 transition-all"
         >
           Submit
         </button>

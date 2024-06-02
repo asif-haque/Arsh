@@ -30,7 +30,9 @@ const Navbar = () => {
         {navItems.map((item) => (
           <div
             key={item.name}
-            className={`${path === item.path && `text-orange-600`} hover:font-bold transition-all`}
+            className={`${
+              path === item.path && `text-orange-600`
+            } hover:font-bold transition-all`}
           >
             <Link href={item.path}>{item.name}</Link>
           </div>
