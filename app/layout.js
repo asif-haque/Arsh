@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className}, bg-gradient-to-tr from-white to-slate-50 bg-no-repeat`}
+        className={`${inter.className}, bg-gradient-to-tr from-white to-slate-100 bg-no-repeat`}
       >
         <EventsContextProvider>
           <nav>
