@@ -6,11 +6,14 @@ import Loading from "../components/loading/Loading";
 import { CiFilter } from "react-icons/ci";
 import { debounce } from "@/utils/utils";
 import FilterBox from "../components/filter-box/FilterBox";
+import { IoClose } from "react-icons/io5";
+import { FaFilter } from "react-icons/fa";
 
 const Page = () => {
   const { events, setEvents } = useEventsContext();
   const [isMounted, setIsMounted] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isFilterApplied, setIsFilterApplied] = useState(false);
   const [resultEvents, setResultEvents] = useState([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
@@ -59,7 +62,7 @@ const Page = () => {
         <img
           src="/underline.svg"
           alt="underline image"
-          className="w-[100px] lg:w-[180px] absolute left-[70px] lg:-bottom-[15px] -bottom-[10px]"
+          className="w-[100px] lg:w-[180px] absolute left-[50px] lg:left-[70px] lg:-bottom-[15px] -bottom-[10px]"
         />
       </div>
 
@@ -78,21 +81,33 @@ const Page = () => {
               onClick={() => setIsFilterOpen(!isFilterOpen)}
             >
               Filters
-              <CiFilter className="text-2xl" />
+              {isFilterOpen ? (
+                <IoClose className="text-2xl text-black" />
+              ) : isFilterApplied ? (
+                <FaFilter />
+              ) : (
+                <CiFilter className="text-2xl" />
+              )}
             </div>
           </div>
 
           <div
             className={` bg-white rounded-xl ${
-              isFilterOpen ? `h-[100px]` : `h-0`
+              isFilterOpen ? `h-[220px] border` : `h-0`
             } transition-all duration-300`}
           >
-            <FilterBox isFilterOpen={isFilterOpen} />
+            <FilterBox
+              isFilterOpen={isFilterOpen}
+              setIsFilterOpen={setIsFilterOpen}
+              resultEvents={resultEvents}
+              setResultEvents={setResultEvents}
+              setIsFilterApplied={setIsFilterApplied}
+            />
           </div>
         </div>
 
         <div className="space-y-5 pt-5 flex-1">
-          {!searchTerm ? (
+          {!searchTerm && !isFilterApplied ? (
             events
               .toReversed()
               .map((event) => <EventDiv key={event.id} event={event} />)

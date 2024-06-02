@@ -2,7 +2,7 @@ import React from "react";
 
 const EventForm = ({ handleSubmit }) => {
   return (
-    <div className="w-full md:pt-5">
+    <div className="w-full pt-5">
       <form className="mx-auto" onSubmit={handleSubmit}>
         <div className="mb-5">
           <label
