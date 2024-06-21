@@ -49,3 +49,11 @@ export const initialTemporaryState = [
     id: crypto.randomUUID(),
   },
 ];
+
+export const fetchData = async () => {
+  const rawData = await fetch(
+    "https://prolevate-backend-deploy.onrender.com/api/v1/events"
+  );
+  const data = await rawData.json();
+  return data;
+};

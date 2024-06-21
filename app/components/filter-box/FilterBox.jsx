@@ -48,7 +48,7 @@ const FilterBox = ({
   };
 
   return (
-    <div className={`${isFilterOpen ? `block` : `hidden`} p-5`}>
+    <div className={`${isFilterOpen ? `block` : `block`} p-5`}>
       <form onSubmit={handleFilters}>
         <div className="mb-2">
           <h3 className="mb-1 font-semibold">Filter by:</h3>

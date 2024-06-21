@@ -95,7 +95,7 @@ const Page = () => {
           <div
             className={` bg-white rounded-xl ${
               isFilterOpen ? `h-[220px] shadow-md` : `h-0`
-            } transition-all duration-300`}
+            } overflow-hidden transition-all duration-300`}
           >
             <FilterBox
               isFilterOpen={isFilterOpen}
